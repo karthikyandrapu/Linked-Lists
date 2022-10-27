@@ -11,7 +11,7 @@ typedef struct node*nptr;
 
 nptr insert_begin(nptr head, int x) 
 {
-  nptr p,temp;
+  nptr p;
   p=(nptr)malloc(sizeof(struct node));
   p->data=x;
   if(head==NULL)
@@ -79,7 +79,7 @@ nptr insert_pos(nptr head,int x,int pos)
 
 nptr delete_begin(nptr head)
 {
-  nptr temp,t;
+  nptr temp;
   if(head==NULL)
   {
     printf("Deletion is not possible\n");
@@ -165,7 +165,7 @@ void search(nptr head,int x)
 {
   nptr temp=head;
   int i=1;
-  bool flag=0;
+  bool flag=false;
   if(head==NULL)
   {
     printf("List is empty\n");
@@ -176,7 +176,7 @@ void search(nptr head,int x)
 	{
       if(temp->data==x)
 	  {
-        flag=1;
+        flag=true;
         break;
       }
       i++;
